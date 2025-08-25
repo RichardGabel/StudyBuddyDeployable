@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const connection = axios.create({
-    baseURL: "http://localhost:8000",
+    baseURL: "https://studybuddydeployable.onrender.com",
     withCredentials: true,
     method: ["GET", "POST", "DELETE", "PUT", "PATCH"]
 });

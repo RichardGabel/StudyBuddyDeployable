@@ -8,7 +8,7 @@ from database import get_db
 from pymongo.errors import DuplicateKeyError  # Import for handling unique constraints
 
 
-REDIRECT_URI = "http://localhost:8000/auth/callback"
+REDIRECT_URI = "https://your-app.onrender.com/auth/callback"
 print(f"REDIRECT_URI: {REDIRECT_URI}")
 router = APIRouter()
 
@@ -69,7 +69,7 @@ async def callback(request: Request, db=Depends(get_db)):
         request.session["user_email"] = user_info["email"]
         
         # Redirect to the frontend's "Upload PDF" page
-        return RedirectResponse(url="http://localhost:8001/upload")
+        return RedirectResponse(url="https://your-cloudflare-project.pages.dev/upload")
     except Exception as e:
         # Log the error
         print(f"Error during callback: {str(e)}")
