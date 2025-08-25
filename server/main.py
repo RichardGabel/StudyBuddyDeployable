@@ -30,7 +30,7 @@ app.include_router(user_router, prefix="/user", tags=["user"])
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Restrict this in production
+    allow_origins=["https://studybuddydeployable.pages.dev"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -41,7 +41,8 @@ app.add_middleware(
     SessionMiddleware, 
     secret_key=SECRET_KEY,
     max_age=3600,
-    same_site="lax"
+    same_site="none",  # Allow cross-site cookies
+    https_only=True    # Secure cookies for HTTPS
 )
 
 @app.get("/")
