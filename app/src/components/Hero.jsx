@@ -1,6 +1,6 @@
 function HeroSection() {
   const handleLogin = () => {
-    window.location.href = "http://localhost:8000/auth/login"; // Redirect to backend login
+    window.location.href = "https://studybuddydeployable.onrender.com/auth/login"; // Redirect to backend login
   };
 
   return (

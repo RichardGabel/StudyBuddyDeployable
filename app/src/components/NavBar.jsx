@@ -8,14 +8,14 @@ function NavBar() {
   const handleLogin = async () => {
     try {
       // Redirect to the backend login route
-      window.location.href = "http://localhost:8000/auth/login";
+      window.location.href = "https://studybuddydeployable.onrender.com/auth/login";
     } catch (err) {
       console.error("Error during login:", err);
     }
   };
 
   const handleSignup = () => {
-    window.location.href = "http://localhost:8000/auth/login"; // Redirect to backend signup (same as login for now)
+    window.location.href = "https://studybuddydeployable.onrender.com/auth/login"; // Redirect to backend signup (same as login for now)
   };
 
   return (
