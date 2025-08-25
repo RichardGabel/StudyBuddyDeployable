@@ -6,9 +6,11 @@ from starlette.responses import RedirectResponse, JSONResponse
 from auth import DOMAIN, CLIENT_ID
 from database import get_db
 from pymongo.errors import DuplicateKeyError  # Import for handling unique constraints
+import os
 
 
-REDIRECT_URI = "https://your-app.onrender.com/auth/callback"
+REDIRECT_URI = os.getenv("REDIRECT_URI", "http://localhost:8000/auth/callback")
+FRONTEND_URL = os.getenv("FRONTEND_URL", "http://localhost:8001")
 print(f"REDIRECT_URI: {REDIRECT_URI}")
 router = APIRouter()
 
@@ -69,7 +71,7 @@ async def callback(request: Request, db=Depends(get_db)):
         request.session["user_email"] = user_info["email"]
         
         # Redirect to the frontend's "Upload PDF" page
-        return RedirectResponse(url="https://your-cloudflare-project.pages.dev/upload")
+        return RedirectResponse(url=f"{FRONTEND_URL}/upload")
     except Exception as e:
         # Log the error
         print(f"Error during callback: {str(e)}")

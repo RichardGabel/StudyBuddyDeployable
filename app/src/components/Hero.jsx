@@ -1,6 +1,8 @@
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+
 function HeroSection() {
   const handleLogin = () => {
-    window.location.href = "https://studybuddydeployable.onrender.com/auth/login"; // Redirect to backend login
+    window.location.href = `${BACKEND_URL}/auth/login`; // Redirect to backend login
   };
 
   return (

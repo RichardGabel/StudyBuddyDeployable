@@ -2,20 +2,22 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import connection from "../backend"; // Axios instance
 
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+
 function NavBar() {
   const navigate = useNavigate();
 
   const handleLogin = async () => {
     try {
       // Redirect to the backend login route
-      window.location.href = "https://studybuddydeployable.onrender.com/auth/login";
+      window.location.href = `${BACKEND_URL}/auth/login`;
     } catch (err) {
       console.error("Error during login:", err);
     }
   };
 
   const handleSignup = () => {
-    window.location.href = "https://studybuddydeployable.onrender.com/auth/login"; // Redirect to backend signup (same as login for now)
+    window.location.href = `${BACKEND_URL}/auth/login`; // Redirect to backend signup (same as login for now)
   };
 
   return (
