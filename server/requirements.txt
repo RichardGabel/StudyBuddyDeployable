@@ -11,7 +11,7 @@ cryptography==44.0.2
 ecdsa==0.19.1
 fastapi==0.115.12
 google-auth==2.38.0
-google-generativeai==1.9.0
+google-genai==1.9.0
 h11==0.14.0
 httpcore==1.0.7
 httpx==0.28.1
@@ -19,15 +19,12 @@ idna==3.10
 itsdangerous==2.2.0
 Jinja2==3.1.6
 MarkupSafe==3.0.2
-PyPDF2==3.0.1
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
 pycparser==2.22
 pydantic==2.11.2
 pydantic_core==2.33.1
 python-jose==3.4.0
-python-dotenv==1.0.1
-python-multipart==0.0.9
 requests==2.32.3
 rsa==4.9
 six==1.17.0
@@ -40,3 +37,5 @@ uvicorn==0.23.2
 websockets==15.0.1
 pymongo==4.5.0
 Werkzeug==2.3.7
+PyPDF2==3.0.1
+python-dotenv==1.0.0
