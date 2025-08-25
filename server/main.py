@@ -30,7 +30,7 @@ app.include_router(user_router, prefix="/user", tags=["user"])
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://studybuddydeployable.pages.dev"],
+    allow_origins=["https://studybuddies.pages.dev"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
